@@ -72,6 +72,19 @@
     scrollToSlide(prev);
   }
 
+  function updateArrowVisibility() {
+    const index = getCurrentSlideIndex();
+    if (navPrev) {
+      navPrev.classList.toggle('hidden', index === 0);
+    }
+    if (navNext) {
+      navNext.classList.toggle('hidden', index === slides.length - 1);
+    }
+  }
+
+  presentation.addEventListener('scroll', updateArrowVisibility);
+  updateArrowVisibility();
+
   // Navegação por teclado
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
