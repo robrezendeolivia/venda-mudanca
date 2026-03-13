@@ -209,6 +209,16 @@ body {
   color: #999;
 }
 
+.toc-list a.reserved {
+  color: #9a7b2e;
+}
+
+.toc-list a.reserved::after {
+  content: " (Reservado)";
+  font-size: 0.85em;
+  color: #9a7b2e;
+}
+
 /* Slide item - PowerPoint two-column layout */
 .slide-item {
   display: flex;
@@ -223,6 +233,10 @@ body {
 
 .slide-item.sold {
   background: linear-gradient(135deg, #f5d0d0 0%, #f0c0c0 50%, #fce0e0 100%);
+}
+
+.slide-item.reserved {
+  background: linear-gradient(135deg, #f5e6c8 0%, #f0d890 50%, #fce8b8 100%);
 }
 
 .slide-content {
@@ -241,6 +255,11 @@ body {
 .slide-item.sold .slide-info {
   background: rgba(245, 208, 208, 0.8);
   border-right-color: #e0b0b0;
+}
+
+.slide-item.reserved .slide-info {
+  background: rgba(245, 230, 200, 0.8);
+  border-right-color: #d4b86a;
 }
 
 .slide-info {
@@ -289,9 +308,28 @@ body {
   z-index: 10;
 }
 
+/* Badge RESERVADO - oculto por padrão */
+.badge-reserved {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: #c9a227;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 10;
+}
+
 /* Estado vendido */
 .slide-item.sold .badge-sold {
   display: block;
+}
+
+.slide-item.sold .badge-reserved {
+  display: none;
 }
 
 .slide-item.sold .price {
@@ -303,8 +341,30 @@ body {
   opacity: 0.6;
 }
 
+/* Estado reservado */
+.slide-item.reserved .badge-reserved {
+  display: block;
+}
+
+.slide-item.reserved .badge-sold {
+  display: none;
+}
+
+.slide-item.reserved .price {
+  text-decoration: none;
+  color: #2d5a4a;
+}
+
+.slide-item.reserved .gallery img {
+  opacity: 0.85;
+}
+
 /* Estado à venda */
 .slide-item.available .badge-sold {
+  display: none;
+}
+
+.slide-item.available .badge-reserved {
   display: none;
 }
 
