@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #2d3a4f;
+  color: #333;
+  overflow: hidden;
+  position: relative;
+}
+
+.presentation {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.presentation::-webkit-scrollbar {
+  display: none;
+}
+
+.presentation {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2d5a4a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow:hover {
+  background: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.nav-arrow:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+.nav-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-prev {
+  left: 16px;
+}
+
+.nav-next {
+  right: 16px;
+}
+
+@media (max-width: 768px) {
+  .nav-arrow {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-prev {
+    left: 8px;
+  }
+
+  .nav-next {
+    right: 8px;
+  }
+
+  .slide-toc {
+    padding: 2rem 1.5rem;
+  }
+
+  .toc-list {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .slide-info {
+    flex: 0 0 40%;
+    padding: 1.5rem 1rem;
+  }
+
+  .slide-item h2 {
+    font-size: 1.35rem;
+  }
+
+  .slide-item .price {
+    font-size: 1.5rem;
+  }
+
+  .gallery {
+    padding: 1rem;
+  }
+
+  .gallery img {
+    max-height: calc(100vh - 6rem);
+  }
+}
+
+.slide {
+  flex: 0 0 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #fff;
+  position: relative;
+}
+
+/* Slide título - Attractive gradient */
+.slide-title {
+  background: linear-gradient(135deg, #2d5a4a 0%, #3d7a5c 40%, #4a9c73 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.slide-title h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.slide-title .subtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+}
+
+/* Slide índice - full page */
+.slide-toc {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem 4rem;
+  background: linear-gradient(180deg, #f5f7f0 0%, #fffef8 100%);
+}
+
+.slide-toc h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #2d5a4a;
+  font-weight: 600;
+}
+
+.toc-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 3rem;
+  max-width: 100%;
+}
+
+.toc-list a {
+  color: #2d3a4f;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 0.4rem 0;
+  transition: color 0.2s;
+}
+
+.toc-list a:hover {
+  color: #2d5a4a;
+  text-decoration: underline;
+}
+
+.toc-list a.sold {
+  color: #999;
+}
+
+.toc-list a.sold::after {
+  content: " (Vendido)";
+  font-size: 0.85em;
+  color: #999;
+}
+
+/* Slide item - PowerPoint two-column layout */
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: #dcebdc;
+}
+
+.slide-item.available {
+  background: linear-gradient(135deg, #d4e8d4 0%, #c8e0c8 50%, #dcebdc 100%);
+}
+
+.slide-item.sold {
+  background: linear-gradient(135deg, #f5d0d0 0%, #f0c0c0 50%, #fce0e0 100%);
+}
+
+.slide-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  gap: 2rem;
+}
+
+.slide-item.available .slide-info {
+  background: rgba(212, 232, 212, 0.8);
+  border-right-color: #a8c8a8;
+}
+
+.slide-item.sold .slide-info {
+  background: rgba(245, 208, 208, 0.8);
+  border-right-color: #e0b0b0;
+}
+
+.slide-info {
+  flex: 0 0 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2rem 3rem 3rem;
+  border-right: 2px solid #e8ebe0;
+  background: rgba(255, 254, 248, 0.5);
+}
+
+.slide-item h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #2d3a4f;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.slide-item .dimensions {
+  font-size: 1.05rem;
+  color: #5a6b5a;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.slide-item .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d5a4a;
+}
+
+/* Badge VENDIDO - oculto por padrão */
+.badge-sold {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: #666;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Estado vendido */
+.slide-item.sold .badge-sold {
+  display: block;
+}
+
+.slide-item.sold .price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.slide-item.sold .gallery img {
+  opacity: 0.6;
+}
+
+/* Estado à venda */
+.slide-item.available .badge-sold {
+  display: none;
+}
+
+.slide-item.available .price {
+  text-decoration: none;
+  color: #2d5a4a;
+}
+
+.slide-item.available .gallery img {
+  opacity: 1;
+}
+
+/* Galeria - ocupa o restante da página à direita */
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 2rem 3rem 2rem 0;
+  align-content: flex-start;
+  overflow-y: auto;
+}
+
+.gallery img {
+  max-height: calc(100vh - 4rem);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid #e8ebe0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(45, 90, 74, 0.08);
+}

@@ -1,0 +1,74 @@
+{
+  "1": {
+    "name": "Fogão Brastemp 4 bocas",
+    "sold": false
+  },
+  "2": {
+    "name": "Depurador Electrolux",
+    "sold": false
+  },
+  "3": {
+    "name": "Geladeira Consul",
+    "sold": false
+  },
+  "4": {
+    "name": "Microondas Electrolux 30L",
+    "sold": false
+  },
+  "5": {
+    "name": "Máquina lavar LG",
+    "sold": false
+  },
+  "6": {
+    "name": "Estante Tok Stok",
+    "sold": false
+  },
+  "7": {
+    "name": "Buffet",
+    "sold": false
+  },
+  "8": {
+    "name": "Móvel escrivaninha",
+    "sold": false
+  },
+  "9": {
+    "name": "Móvel apoio café",
+    "sold": false
+  },
+  "10": {
+    "name": "Baú",
+    "sold": false
+  },
+  "11": {
+    "name": "Sofá",
+    "sold": true
+  },
+  "12": {
+    "name": "Rack",
+    "sold": false
+  },
+  "13": {
+    "name": "Painel",
+    "sold": false
+  },
+  "14": {
+    "name": "Cômoda espelho",
+    "sold": false
+  },
+  "15": {
+    "name": "Armário baixo Tok Stok 2 portas",
+    "sold": false
+  },
+  "16": {
+    "name": "Armário alto Tok Stok 2 portas",
+    "sold": false
+  },
+  "17": {
+    "name": "Armário infantil 4 portas",
+    "sold": false
+  },
+  "18": {
+    "name": "Cômoda",
+    "sold": false
+  }
+}
