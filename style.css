@@ -35,7 +35,7 @@ body {
 /* Navigation arrows */
 .nav-arrow {
   position: fixed;
-  top: 50%;
+  top: 35%;
   transform: translateY(-50%);
   z-index: 100;
   width: 48px;
@@ -53,6 +53,11 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: background 0.2s, transform 0.2s;
   -webkit-tap-highlight-color: transparent;
+}
+
+.nav-arrow.hidden {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .nav-arrow:hover {
