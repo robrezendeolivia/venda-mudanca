@@ -15,27 +15,26 @@
     }
   });
 
-  // Carregar status e aplicar classes
+  const STATUS_CLASS = {
+    on_sale: 'available',
+    reserved: 'reserved',
+    sold: 'sold',
+  };
+
   fetch('status.json')
     .then((res) => res.json())
     .then((status) => {
       document.querySelectorAll('.slide-item').forEach((slide) => {
         const itemId = slide.getAttribute('data-item');
-        const item = status[itemId];
-        const isSold = item && item.sold === true;
-        slide.classList.add(isSold ? 'sold' : 'available');
+        const itemStatus = status[itemId]?.status ?? 'on_sale';
+        slide.classList.add(STATUS_CLASS[itemStatus] ?? 'available');
       });
 
-      // Atualizar índice com indicador de vendido
       document.querySelectorAll('.toc-list a').forEach((link) => {
-        const href = link.getAttribute('href');
-        const match = href && href.match(/#item-(\d+)/);
+        const match = link.getAttribute('href')?.match(/#item-(\d+)/);
         if (match) {
-          const itemId = match[1];
-          const item = status[itemId];
-          if (item && item.sold === true) {
-            link.classList.add('sold');
-          }
+          const itemStatus = status[match[1]]?.status ?? 'on_sale';
+          link.classList.add(STATUS_CLASS[itemStatus] ?? 'available');
         }
       });
     })

@@ -1,74 +1,74 @@
 {
   "1": {
     "name": "Fogão Brastemp 4 bocas",
-    "sold": false
+    "status": "reserved"
   },
   "2": {
     "name": "Depurador Electrolux",
-    "sold": false
+    "status": "on_sale"
   },
   "3": {
     "name": "Geladeira Consul",
-    "sold": false
+    "status": "on_sale"
   },
   "4": {
     "name": "Microondas Electrolux 30L",
-    "sold": false
+    "status": "on_sale"
   },
   "5": {
     "name": "Máquina lavar LG",
-    "sold": false
+    "status": "on_sale"
   },
   "6": {
     "name": "Estante Tok Stok",
-    "sold": false
+    "status": "on_sale"
   },
   "7": {
     "name": "Buffet",
-    "sold": false
+    "status": "on_sale"
   },
   "8": {
     "name": "Móvel escrivaninha",
-    "sold": false
+    "status": "reserved"
   },
   "9": {
     "name": "Móvel apoio café",
-    "sold": false
+    "status": "on_sale"
   },
   "10": {
     "name": "Baú",
-    "sold": false
+    "status": "reserved"
   },
   "11": {
     "name": "Sofá",
-    "sold": true
+    "status": "sold"
   },
   "12": {
     "name": "Rack",
-    "sold": false
+    "status": "on_sale"
   },
   "13": {
     "name": "Painel",
-    "sold": false
+    "status": "on_sale"
   },
   "14": {
     "name": "Cômoda espelho",
-    "sold": false
+    "status": "on_sale"
   },
   "15": {
     "name": "Armário baixo Tok Stok 2 portas",
-    "sold": false
+    "status": "on_sale"
   },
   "16": {
     "name": "Armário alto Tok Stok 2 portas",
-    "sold": false
+    "status": "on_sale"
   },
   "17": {
     "name": "Armário infantil 4 portas",
-    "sold": false
+    "status": "on_sale"
   },
   "18": {
     "name": "Cômoda",
-    "sold": false
+    "status": "on_sale"
   }
 }

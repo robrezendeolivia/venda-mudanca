@@ -84,16 +84,19 @@ Cada chave é o ID do item (1–18). O valor é um objeto com:
 
 ---
 
+## Rodar localmente
+
+```bash
+npx -y serve -l 3000
+```
+
+Acesse http://localhost:3000 no navegador.
+
+---
+
 ## Como usar (Usuário final)
 
 - **Navegação:** Setas ← → do teclado, botões laterais ou clique na tela
 - **Mobile:** Deslize para esquerda/direita
 - **Índice:** Clique nos itens para ir ao slide correspondente
 
-## Publicar no GitHub Pages
-
-1. Commit e push dos arquivos
-2. GitHub → **Settings** → **Pages**
-3. **Source:** Deploy from a branch
-4. **Branch:** `main` (ou `master`), pasta `/ (root)`
-5. Site em `https://[usuario].github.io/venda-mudanca/`
